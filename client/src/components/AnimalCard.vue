@@ -16,13 +16,13 @@
 
 <script>
 export default {
-    name: 'AnimalCard',
-    props: ['animal'],
-    methods: {
-        addFavorite () {
-            this.$store.dispatch('addFavorite', this.animal.id)
-        }
+  name: 'AnimalCard',
+  props: ['animal'],
+  methods: {
+    addFavorite () {
+      this.$store.dispatch('addFavorite', this.animal.id)
     }
+  }
 }
 </script>
 

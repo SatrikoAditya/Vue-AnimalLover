@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar /> 
+    <Navbar />
     <div class="favorite">
     <h1>My Favorites Animals</h1>
     </div>
@@ -12,24 +12,24 @@
 import FavoriteCard from '../components/FavoriteCard'
 import Navbar from '../components/Navbar'
 export default {
-    name: 'Favorite',
-    components: {
-        Navbar,
-        FavoriteCard
-    },
-    computed: {
-        favorites () {
-            return this.$store.state.favorites
-        }
-    },
-    methods: {
-        fetchFavorite () {
-            this.$store.dispatch('fetchFavorite')
-        }
-    },
-    created () {
-        this.fetchFavorite()
+  name: 'Favorite',
+  components: {
+    Navbar,
+    FavoriteCard
+  },
+  computed: {
+    favorites () {
+      return this.$store.state.favorites
     }
+  },
+  methods: {
+    fetchFavorite () {
+      this.$store.dispatch('fetchFavorite')
+    }
+  },
+  created () {
+    this.fetchFavorite()
+  }
 }
 </script>
 

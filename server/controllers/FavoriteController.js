@@ -16,6 +16,20 @@ class FavoriteController {
         })
     }
 
+    static findAll(req, res, next) {
+        Favorite.findAll({
+            include: [ Animal ],
+            attributes: ['id', 'userId', 'animalId', 'createdAt', 'updatedAt']
+        })
+        .then(data => {
+            res.status(200).json({data})
+        })
+        .catch(err => {
+            console.log(err)
+            next(err)
+        })
+    }
+
     static delete(req, res, next) {
         const {id} = req.params
         Favorite.destroy({
@@ -25,19 +39,6 @@ class FavoriteController {
         })
         .then(data => {
             res.status(200).json({message: 'Successfully delete favorite animal'})
-        })
-        .catch(err => {
-            console.log(err)
-            next(err)
-        })
-    }
-
-    static findAll(req, res, next) {
-        Favorite.findAll({
-            include: [ Animal ]
-        })
-        .then(data => {
-            res.status(200).json({data})
         })
         .catch(err => {
             console.log(err)

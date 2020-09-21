@@ -29,22 +29,22 @@
 
 <script>
 export default {
-    name: 'Login',
-    data () {
-        return {
-            email: '',
-            password: ''
-        }
-    },
-    methods : {
-        login () {
-            const payload = {
-                email: this.email,
-                password: this.password
-            }
-            this.$store.dispatch('login', payload)
-        }
+  name: 'Login',
+  data () {
+    return {
+      email: '',
+      password: ''
     }
+  },
+  methods: {
+    login () {
+      const payload = {
+        email: this.email,
+        password: this.password
+      }
+      this.$store.dispatch('login', payload)
+    }
+  }
 }
 </script>
 

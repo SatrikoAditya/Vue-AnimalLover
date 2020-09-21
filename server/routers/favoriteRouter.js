@@ -9,5 +9,4 @@ router.get('/', FavoriteController.findAll)
 router.post('/:animalId', FavoriteController.create)
 router.delete('/:id', FavoriteController.delete)
 
-
 module.exports = router

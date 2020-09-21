@@ -20,13 +20,13 @@
 
 <script>
 export default {
-    name: 'FavoriteCard',
-    props: ['favorite'],
-    methods: {
-        deleteFavorite () {
-            this.$store.dispatch('deleteFavorite', this.favorite.id)
-        }
+  name: 'FavoriteCard',
+  props: ['favorite'],
+  methods: {
+    deleteFavorite () {
+      this.$store.dispatch('deleteFavorite', this.favorite.id)
     }
+  }
 }
 </script>
 

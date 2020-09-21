@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Navbar /> 
+    <Navbar />
     <div class="home-container">
       <AnimalCard v-for="animal in animals" :key="animal.id" :animal="animal" />
     </div>
@@ -29,7 +29,7 @@ export default {
     }
   },
   created () {
-    this.fetchAnimal() 
-  } 
+    this.fetchAnimal()
+  }
 }
 </script>

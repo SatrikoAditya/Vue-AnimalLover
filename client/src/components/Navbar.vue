@@ -18,18 +18,18 @@
 
 <script>
 export default {
-    name: 'Navbar',
-    methods: {
-        logout () {
-            this.$store.dispatch('logout')
-        },
-        toFavorite () {
-            this.$router.push({name: 'Favorite'})
-        },
-        toHome () {
-            this.$router.push({name: 'Home'})
-        }
+  name: 'Navbar',
+  methods: {
+    logout () {
+      this.$store.dispatch('logout')
+    },
+    toFavorite () {
+      this.$router.push({ name: 'Favorite' })
+    },
+    toHome () {
+      this.$router.push({ name: 'Home' })
     }
+  }
 }
 </script>
 
