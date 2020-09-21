@@ -106,7 +106,7 @@ export default new Vuex.Store({
             toast: true,
             icon: 'success',
             position: 'top-end',
-            title: 'Success delete selected favorite animal!',
+            title: 'Success delete from favorite!',
             showConfirmButton: false,
             timer: 2000
           })
