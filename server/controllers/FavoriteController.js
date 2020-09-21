@@ -27,31 +27,17 @@ class FavoriteController {
             res.status(200).json({message: 'Successfully delete favorite animal'})
         })
         .catch(err => {
+            console.log(err)
             next(err)
         })
     }
 
     static findAll(req, res, next) {
-        // const userId = req.loginUser.id
         Favorite.findAll({
             include: [ Animal ]
         })
         .then(data => {
-            let favorites = []
-            data.forEach(f => {
-                favorites.push({
-                    id: f.id,
-                    userId: f.userId,
-                    animalId: f.animalId,
-                    animal: {
-                        id: f.Animal.id,
-                        name: f.Animal.name,
-                        imageUrl: f.Animal.imageUrl,
-                        description: f.Animal.description
-                    }
-                })
-            });
-            res.status(200).json({favorites})
+            res.status(200).json({data})
         })
         .catch(err => {
             console.log(err)

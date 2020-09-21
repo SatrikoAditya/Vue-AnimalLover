@@ -42,7 +42,7 @@ export default {
                 email: this.email,
                 password: this.password
             }
-            console.log(payload)
+            this.$store.dispatch('login', payload)
         }
     }
 }

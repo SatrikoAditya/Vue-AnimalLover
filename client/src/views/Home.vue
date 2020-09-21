@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Navbar /> 
+    <div class="home-container">
+      <AnimalCard v-for="animal in animals" :key="animal.id" :animal="animal" />
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Navbar from '../components/Navbar'
+import AnimalCard from '../components/AnimalCard'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
-  }
+    Navbar,
+    AnimalCard
+  },
+  computed: {
+    animals () {
+      return this.$store.state.animals
+    }
+  },
+  methods: {
+    fetchAnimal () {
+      this.$store.dispatch('fetchAnimal')
+    }
+  },
+  created () {
+    this.fetchAnimal() 
+  } 
 }
 </script>
