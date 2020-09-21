@@ -1,4 +1,5 @@
 function errorHandler(err, req, res, next) {
+    console.log(err)
     let errors = []
     let statusCode = 500
 
@@ -10,6 +11,15 @@ function errorHandler(err, req, res, next) {
     } else if(err.name === 'LOGIN_FAILED') {
         statusCode = 400
         errors.push('Invalid email or password')
+    } else if(err.name === 'DATA_NOT_FOUND') {
+        statusCode = 404
+        errors.push('data not found')
+    } else if(err.name === 'AUTHENTICATION_FAILED') {
+        statusCode = 401
+        errors.push('failed to authenticate!')
+    } else if(err.name === 'AUTHORIZATION_FAILED') {
+        statusCode = 403
+        errors.push('forbidden access!')
     } else {
         errors.push('Internal Server Error')
     }
