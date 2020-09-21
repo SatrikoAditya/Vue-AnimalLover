@@ -20,6 +20,9 @@ function errorHandler(err, req, res, next) {
     } else if(err.name === 'AUTHORIZATION_FAILED') {
         statusCode = 403
         errors.push('forbidden access!')
+    } else if(err.name === 'INVALID_TOKEN') {
+        statusCode = 401
+        errors.push('invalid token')
     } else {
         errors.push('Internal Server Error')
     }

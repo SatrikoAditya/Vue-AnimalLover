@@ -10,12 +10,10 @@ function authorization(req, res, next) {
     })
     .then(data => {
         if(!data) {
-            console.log(data)
             throw {name: 'DATA_NOT_FOUND'}
         } else if(data.userId === req.loginUser.id) {
             next()
         } else {
-            console.log(data)
             throw {name: 'AUTHORIZATION_FAILED'}
         }
     })
