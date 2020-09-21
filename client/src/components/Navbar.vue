@@ -1,11 +1,11 @@
 <template>
     <nav>
         <div class="nav-left">
-        <img
+        <img @click.prevent="toHome"
             src="https://mustopa28121992.github.io/projectt/img/fox--md5--a9e377ae39495073d0e66db163fc8d9b.png"
             alt="logo"
         />
-        <h1>Animal Lover</h1>
+        <h1 @click.prevent="toHome">Animal Lover</h1>
         </div>
         <div class="nav-center">
         <a href="#" @click.prevent="toFavorite">My Favorites</a>
@@ -25,6 +25,9 @@ export default {
         },
         toFavorite () {
             this.$router.push({name: 'Favorite'})
+        },
+        toHome () {
+            this.$router.push({name: 'Home'})
         }
     }
 }
